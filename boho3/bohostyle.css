@@ -1,0 +1,247 @@
+<style media="screen">
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+  body,html {
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+  }
+  h5{
+    color:white;
+    font-size:60px;
+    position: absolute;
+    width:100%;
+    padding-left:10%;
+    transform: translateY(40px);
+  }
+  p {
+    font-family: "Source Serif 4", serif !important;
+    font-optical-sizing: auto;
+    font-weight: 420 !important;
+    font-style: normal;
+  }
+
+  * {
+    border:.5px dashed blue;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8rem;
+    font-family: "Source Sans 3", sans-serif;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #003D8E !important;
+  }
+
+  footer a {
+    color: white !important;
+  }
+
+  footer {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    background: black;
+    color: white;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    bottom: -1px;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+
+  header {
+    margin-top: -30px;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    max-width:800px;
+    filter: brightness(80%) saturate(120%);
+    margin:auto;
+  }
+
+  .hidden {
+    transform: translateY(-5%);
+    opacity: 0 !important;
+  }
+
+  .hero-image {
+    max-width: 2000px;
+    width: 100vw;
+    transform: scaleX(-1);
+    transition: 1s;
+    opacity: 1;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+
+
+  .main-text {
+    min-height: 50vh;
+    width: 100vw;
+    padding: 2rem 10vw 10rem 10vw;
+    margin: auto;
+    max-width: 1000px;
+    font-family: "Source Serif 4", serif;
+    font-weight: 405;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  main {
+    margin: auto;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .pendel {
+    margin-top: -20px;
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .menubar {
+    width: 60%;
+    max-width: 800px;
+    min-width: 300px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom:10px;
+  }
+  .menubar a{
+    padding-left: 10px;
+    padding-right:10px;
+  }
+
+  body {
+    background: #F8E6D3;
+    margin-bottom: 300px;
+  }
+
+  h1 {
+    width: 100%;
+    text-align: left !important;
+  }
+
+  h2, h1, h3 {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  #image-container {
+  width: 100%;       /* Container nimmt die volle Breite ein */
+  height: auto;        /* Feste Höhe des Containers (nach Bedarf anpassen) */
+  overflow: visible;     /* Alles, was aus dem Container herausragt, wird abgeschnitten */
+  position: relative;
+}
+
+#image-container img {
+  width: 100%;         /* Bild füllt die volle Breite des Viewports */
+  height: auto;       /* Bild füllt die Höhe des Containers */
+  object-fit: cover;    /* Schneidet das Bild rechts und links ab, ohne es zu verzerren */
+  position: relative;   /* Positionieren des Bildes im Container */
+  left: 50%;            /* Bild zentrieren */
+  transform: translateX(-50%) scaleX(-1);
+}
+
+  /* Media Queries for Mobile Responsiveness */
+  @media (max-width: 768px) {
+    header{
+      margin-top:30px;
+    }
+    .hero-image {
+      justify-content: center;
+      align-items: center;
+      margin-bottom:10px;
+    }
+
+
+
+    .main-text {
+      padding: 1rem 5vw 5rem 5vw;
+    }
+
+    .menubar {
+      width: 66%;
+      max-width: 600px;
+      margin:auto;
+      flex-direction: row;
+    }
+
+    header {
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #image-container {
+    width: 100%;       /* Container nimmt die volle Breite ein */
+    height: 400px;        /* Feste Höhe des Containers (nach Bedarf anpassen) */
+    overflow: hidden;     /* Alles, was aus dem Container herausragt, wird abgeschnitten */
+    position: relative;
+  }
+
+  #image-container img {
+    width: 100%;         /* Bild füllt die volle Breite des Viewports */
+    height: 400px;       /* Bild füllt die Höhe des Containers */
+    object-fit: cover;    /* Schneidet das Bild rechts und links ab, ohne es zu verzerren */
+    position: absolute;   /* Positionieren des Bildes im Container */
+    left: 50%;            /* Bild zentrieren */
+    transform: translateX(-50%) scaleX(-1);
+  }
+  h5{
+    padding-left: 5%;
+    font-size:30px;
+  }
+    #image-container{
+      min-height:300px;
+    }
+
+    .main-text {
+      padding: 0.5rem 4vw 4rem 4vw;
+    }
+
+    .menubar {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    footer {
+      gap: 1rem;
+      font-size:12px;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    h2, h1, h3 {
+    }
+  }
+</style>
