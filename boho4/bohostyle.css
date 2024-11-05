@@ -65,9 +65,9 @@
     max-width: 1200px;
     margin:auto;
     display: flex;
-    position: fixed;
-    left:50%;
-    transform: translateX(-50%);
+    pposition: fixed;
+    lleft:50%;
+    ttransform: translateX(-50%);
     bottom: -1px;
     flex-direction: row;
     gap: 1.5rem;
