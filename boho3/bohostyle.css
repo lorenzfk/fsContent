@@ -23,6 +23,7 @@
   }
 
   * {
+    border:.5px dashed blue;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -152,7 +153,9 @@
     padding-bottom: 1rem;
   }
   #image-container {
-  width: 100%;       /* Container nimmt die volle Breite ein */
+  width: 100%;
+  max-width: 1200px;
+  margin: auto; /* Container nimmt die volle Breite ein */
   height: auto;        /* Feste Höhe des Containers (nach Bedarf anpassen) */
   overflow: visible;     /* Alles, was aus dem Container herausragt, wird abgeschnitten */
   position: relative;
