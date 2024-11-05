@@ -1,0 +1,264 @@
+<html>
+<head>
+	<title>Triathlon Quiz</title>
+  <meta charset="UTF-8">
+	<meta name="description" content="Take the Kaffaesk Triathlon Quiz and find out, which tee is for you!">
+  <meta name="keywords" content="Kaffaesk, Triathlon, T-Shirt, Streetwear, Quiz">
+  <link rel="icon" href="https://cdn.shopify.com/s/files/1/0649/8467/8645/files/esk0_ec80207c-222e-4bb4-930d-1a366f560275.png?v=1712324802">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<style>
+  @font-face {
+  font-family: 'fakereceipt';
+  src: url('https://cdn.shopify.com/s/files/1/0649/8467/8645/files/fakereceipt.woff2?v=1710272302') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+  *{
+    font-weight:normal;
+    max-width:90vw;
+    box-sizing:border-box;
+  }
+  #quiz{
+
+  }
+  input{
+    width:20px;
+  }
+  input:hover{
+    filter:invert();
+
+  }
+  main{
+    max-width:100vw;
+        padding-left:20px;
+    padding-right:20px;
+  }
+  button:hover{
+    filter:invert();
+  }
+  #result,#quiz{
+    margin-top:0!important;
+
+    pposition:absolute;
+    width:100vw;
+    height:auto;
+    min-height:120vh;
+    overflow-y:scroll;
+    padding: 5%;
+    padding-bottom:10vw;
+    z-index:-1;
+      top:0;
+    left:0;
+    background:none;
+    padding-top:50px;
+    bottom:auto;
+    display:flex;
+    flex-direction:column;
+  }
+  #result img{
+    max-width:100%;
+  }
+  #result,#quiz{
+    margin-top:0;
+    position:absolute;
+    padding-top:50px;
+    max-width:800px;
+    margin:auto;
+  }
+  #result{
+    padding-bottom:100px;
+  }
+  button{
+    margin-top:20px;
+    margin-bottom:40px;
+    font-family:fakereceipt;
+    border:none;
+    background:white;
+    font-size:1.5rem;
+    width:100%;
+    text-align:justify;
+  }
+  body{
+
+    box-sizing:border-box;
+    max-width:100vw;
+    height:100vh;
+    width:90vw;
+    font-family:fakereceipt;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+  }
+  .showcase{
+    bottom:0;
+    position:fixed;
+    padding-left:20px;
+    height:100px;
+    margin-top:40px;
+    padding-right:20px;
+    mix-blend-mode:multiply;
+    width:100vw;
+    left:0;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+  }
+  .showtee{
+    width:auto;
+    height:100%;
+  }
+  .logo{
+    z-index:999;
+    max-width:160px;
+    position:fixed;
+    top:14px;
+  }
+  .socials{
+    display:flex;
+    gap:10px;
+  }
+
+</style>
+<img src="https://cdn.shopify.com/s/files/1/0649/8467/8645/files/logo-grill-low-bw2.png?v=1709914661" class="logo"></img>
+
+<main>
+<body>
+
+<div id="quiz">
+  <h1>Triathlon quiz</h1>
+
+<h3>take the quiz and find out which tee you are </h3>
+    <!-- Questions will be dynamically added here -->
+
+<button id="submit">E N T E R</button>
+
+</div>
+  <div class="showcase"><img src="https://cdn.shopify.com/s/files/1/0649/8467/8645/files/gelb-eastpak-tee-mockup-teppich.jpg?v=1711494756" class="showtee"></img><img src="https://cdn.shopify.com/s/files/1/0649/8467/8645/files/lila-tag-tee-mockup-teppich.jpg?v=1711493105" class="showtee"></img><img src="https://cdn.shopify.com/s/files/1/0649/8467/8645/files/blau-basic-tee-mockup-teppich.jpg?v=1711494488" class="showtee"></img></div>
+<div id="result">
+    <!-- Result will be shown here -->
+</div>
+<script>
+window.onload = function() {
+    // Define your questions and their corresponding options
+    const questions = [
+        { question: "Are you enjoying exploring new cultures and traveling to different countries?", options: ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"] },
+        { question: "When faced with a challenge, would you express yourself creatively?", options: ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"] },
+        { question: "How do you prefer to spend your free time: exploring the outdoors -agree-, or engaging in urban activities? -disagree-", options: ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"] },
+        { question: "When it comes to fashion, do you prefer bold and colorful designs -agree- or more subtle and understated styles -disagree-?", options: ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"] },
+        { question: "Is self-expression and individuality important to you in your everyday life?", options: ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"] }
+    ];
+
+    // Initialize index to track current question
+    let currentIndex = 0;
+
+    // Initialize points for each option
+    const points = {
+        "Strongly Disagree": 1,
+        "Disagree": 2,
+        "Neutral": 3,
+        "Agree": 4,
+        "Strongly Agree": 5
+    };
+
+    // Initialize total points for each tee option
+    let totalPoints = {
+        "Globe Logo Tee": 0,
+        "Purple Piece Tee": 0,
+        "Tagged Tee": 0
+    };
+
+    // Function to display the current question
+    function displayQuestion() {
+        const currentQuestion = questions[currentIndex];
+
+        const quizDiv = document.getElementById('quiz');
+        quizDiv.innerHTML = `<h1>Triathlon quiz</h1>
+
+<h3>take the quiz and find out which tee you are </h3>
+    <!-- Questions will be dynamically added here -->
+
+<p>${currentQuestion.question}</p>`;
+        currentQuestion.options.reverse().forEach(option => {
+            quizDiv.innerHTML += `<input type="radio" name="option" value="${option}">${option}<br>`;
+
+        });
+
+quizDiv.innerHTML +=`<button id="submit2">E N T E R</button`;
+      quizDiv.innerHTML += `<div class="socials"> <a href="https://instagram.com/kaffaesk/">instagram</a><a href="https://tiktok.com/@kaffaesk/">tiktok</a></div><p style="padding-top:80px;font-size:.5rem">©kaffaesk / falkson+sommer Design GbR 2024</p>`;
+      if (document.querySelector('#submit2')!=null){
+      document.querySelector('#submit2').addEventListener('click', submitQuiz);
+    }
+      quizDiv.style.zIndex='2';
+    }
+
+    // Function to handle submission of the quiz
+    function submitQuiz() {
+        const selectedOption = document.querySelector('input[name="option"]:checked').value;
+        const optionIndex = questions[currentIndex].options.indexOf(selectedOption);
+
+        // Adjust the score for each tee option based on the selected option
+        if (currentIndex === 0 || currentIndex === 4) { // Questions 1 and 5
+            totalPoints["Globe Logo Tee"] += points[selectedOption];
+        } else if (currentIndex === 1 || currentIndex === 3) { // Questions 2 and 4
+            totalPoints["Purple Piece Tee"] += points[selectedOption];
+        } else { // Question 3
+            totalPoints["Tagged Tee"] += points[selectedOption];
+        }
+
+        if (currentIndex < questions.length - 1) {
+            currentIndex++;
+            displayQuestion();
+        } else {
+            // Determine the result based on total points
+            let result;
+            let image;
+            if (totalPoints["Globe Logo Tee"] > totalPoints["Purple Piece Tee"] && totalPoints["Globe Logo Tee"] > totalPoints["Tagged Tee"]) {
+                result = "You are assigned the Globe Logo Tee, which is a sunny yellow tee with a dark blue globe graphic print.";
+                image = "https://cdn.shopify.com/s/files/1/0649/8467/8645/files/yellow.jpg?v=1711720898.jpg";
+            } else if (totalPoints["Purple Piece Tee"] > totalPoints["Globe Logo Tee"] && totalPoints["Purple Piece Tee"] > totalPoints["Tagged Tee"]) {
+                result = "You are assigned the Purple Piece Tee, which is a deep purple tee with a red and pink graffiti piece logo print.";
+                image = "https://cdn.shopify.com/s/files/1/0649/8467/8645/files/purple_40f2df87-d277-4d8b-ab3d-a813b6c1685a.jpg?v=1711722393";
+            } else {
+                result = "You are assigned the Tagged Tee, which is a sky blue tee with a white graffiti tag on it.";
+                image = "https://cdn.shopify.com/s/files/1/0649/8467/8645/files/blue.jpg?v=1711720897";
+            }
+
+            // Show result
+            const resultDiv = document.getElementById('result');
+          resultDiv.style.background='white';
+
+
+            resultDiv.innerHTML = `
+                <p>${result}</p>
+                <img src="${image}" alt="Tee Image">
+                <p>Globe Logo Tee: ${Math.round((totalPoints["Globe Logo Tee"] / (currentIndex + 1) / 5) * 100)}%</p>
+                <p>Purple Piece Tee: ${Math.round((totalPoints["Purple Piece Tee"] / (currentIndex + 1) / 5) * 100)}%</p>
+                <p>Tagged Tee: ${Math.round((totalPoints["Tagged Tee"] / (currentIndex + 1) / 5) * 100)}%</p>
+                <p>Click <a href="https://shop.kaffaesk.com/products/kaffaesk-globe-logo-tee">here</a> to shop the Globe Logo Tee</p>
+                <p>Click <a href="https://shop.kaffaesk.com/products/kaffaesk-purple-piece-tee">here</a> to shop the Purple Piece Tee</p>
+                <p>Click <a href="https://shop.kaffaesk.com/products/kaffaesk-tagged-tee">here</a> to shop the Tagged Tee</p>
+            `;
+            // Hide quiz area
+            document.getElementById('quiz').style.display = 'none';
+            // Show result area
+            //resultDiv.style.display = 'block';
+            resultDiv.style.ZIndex=2;
+        }
+    }
+
+    // Event listener for
+    document.querySelector('#submit').addEventListener('click', submitQuiz);
+    if (document.querySelector('#submit2')!=null){
+      document.querySelector('#submit2').addEventListener('click', submitQuiz);
+    }
+    // Display the first question
+    displayQuestion();
+}
+
+</script>
+</body>
+</html>
