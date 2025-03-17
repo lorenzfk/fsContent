@@ -47,7 +47,7 @@
             transition: 0.3s;
         }
         .toggle.active {
-            background: grey;
+            background: blue!important;
         }
         .toggle.active:before {
             left: 22px;
@@ -74,21 +74,13 @@
         </div>
         <div class="toggle-container">
             <span>Cookies für berechtigte Interessen</span>
-            <div class="toggle " id="interestToggle"></div>
+            <div class="toggle active" id="interestToggle"></div>
         </div>
         <button class="accept-btn" id="acceptAll">allen Cookies zustimmen</button>
         <button class="save-btn" id="saveSelection">Auswahl speichern</button>
     </div>
 
     <script>
-        document.querySelectorAll('.toggle').forEach(toggle => {
-            toggle.addEventListener('click', function() {
-                if (this.id !== 'essentialToggle') {
-                    this.classList.toggle('active');
-                    checkSaveButton();
-                }
-            });
-        });
 
         document.getElementById('acceptAll').addEventListener('click', function() {
             document.querySelectorAll('.toggle').forEach(toggle => toggle.classList.add('active'));
@@ -121,13 +113,9 @@
         }
 
         // Handle toggles
-        document.querySelectorAll(".toggle").forEach((toggle) => {
-            toggle.addEventListener("click", function () {
-                if (this.id !== "essentialToggle") {
-                    this.classList.toggle("active");
+        interestToggle.addEventListener("click", function () {
+                    interestToggle.classList.toggle("active");
                     checkSaveButton();
-                }
-            });
         });
 
         // Accept all cookies
