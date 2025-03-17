@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Popup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .cookie-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border: 1px solid black;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .cookie-popup h4 {
+            margin-top: 0;
+        }
+        .toggle-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .toggle {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            background: black;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .toggle:before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: 0.3s;
+        }
+        .toggle.active {
+            background: grey;
+        }
+        .toggle.active:before {
+            left: 22px;
+        }
+        .accept-btn, .save-btn {
+            width: 100%;
+            padding: 10px;
+            background: lightgray;
+            border: 1px solid black;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .save-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="cookie-popup" id="cookiePopup">
+        <p>Wir verwenden auf unserer Website nur essentielle Cookies und Cookies für berechtigte Interessen. Die zuletzt erwähnten können Sie ablehnen.</p>
+        <div class="toggle-container">
+            <span>Essentielle Cookies</span>
+            <div class="toggle active" id="essentialToggle"></div>
+        </div>
+        <div class="toggle-container">
+            <span>Cookies für berechtigte Interessen</span>
+            <div class="toggle " id="interestToggle"></div>
+        </div>
+        <button class="accept-btn" id="acceptAll">allen Cookies zustimmen</button>
+        <button class="save-btn" id="saveSelection">Auswahl speichern</button>
+    </div>
+
+    <script>
+        document.querySelectorAll('.toggle').forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                if (this.id !== 'essentialToggle') {
+                    this.classList.toggle('active');
+                    checkSaveButton();
+                }
+            });
+        });
+
+        document.getElementById('acceptAll').addEventListener('click', function() {
+            document.querySelectorAll('.toggle').forEach(toggle => toggle.classList.add('active'));
+            document.getElementById('cookiePopup').style.display = 'none';
+        });
+
+        document.getElementById('saveSelection').addEventListener('click', function() {
+            document.getElementById('cookiePopup').style.display = 'none';
+        });
+
+        function checkSaveButton() {
+            const interestToggle = document.getElementById('interestToggle');
+            const saveButton = document.getElementById('saveSelection');
+            if (!interestToggle.classList.contains('active')) {
+                saveButton.style.display = 'block';
+            } else {
+                saveButton.style.display = 'none';
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+        const popup = document.getElementById("cookiePopup");
+        const essentialToggle = document.getElementById("essentialToggle");
+        const interestToggle = document.getElementById("interestToggle");
+        const acceptAllBtn = document.getElementById("acceptAll");
+        const saveSelectionBtn = document.getElementById("saveSelection");
+
+        // Check if user has already made a choice
+        if (localStorage.getItem("cookieConsent")) {
+            popup.style.display = "none";
+        }
+
+        // Handle toggles
+        document.querySelectorAll(".toggle").forEach((toggle) => {
+            toggle.addEventListener("click", function () {
+                if (this.id !== "essentialToggle") {
+                    this.classList.toggle("active");
+                    checkSaveButton();
+                }
+            });
+        });
+
+        // Accept all cookies
+        acceptAllBtn.addEventListener("click", function () {
+            localStorage.setItem("cookieConsent", "all");
+            popup.style.display = "none";
+        });
+
+        // Save selection
+        saveSelectionBtn.addEventListener("click", function () {
+            const consent = {
+                essential: true,
+                interest: interestToggle.classList.contains("active"),
+            };
+            localStorage.setItem("cookieConsent", JSON.stringify(consent));
+            popup.style.display = "none";
+        });
+
+        function checkSaveButton() {
+            saveSelectionBtn.style.display = interestToggle.classList.contains("active") ? "none" : "block";
+        }
+    });
+
+    </script>
+</body>
+</html>
