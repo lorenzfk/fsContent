@@ -27,8 +27,22 @@
     <a href="about.html" class="menu-item">Über mich</a>
   </div></div>
 </header>
-<iframe src="cookies.html" width="350" height="250" style="z-index: 9999;border:none; position: fixed; bottom: 20px; left: 50%;transform:translateX(-50%); "></iframe>
+<iframe id="cookieFrame"src="cookies.html" width="350" height="450" style="z-index: 9999;border:none; position: fixed; bottom: 20px; left: 50%;transform:translateX(-50%); "></iframe>
+<script>
+window.addEventListener("message", function(event) {
+    if (event.data === "hideCookieFrame") {
+        document.getElementById("cookieFrame").style.display = "none";
+    }
+});
+    function resizeIframe() {
+        let iframe = document.getElementById("cookieFrame");
+        iframe.style.width = window.innerWidth + "px";
+        iframe.style.height = window.innerHeight + "px";
+    }
 
+    window.addEventListener("resize", resizeIframe);
+    resizeIframe(); // Call on page load
+</script>
 <body>
 	<main style="min-height:0;height:0" ></main>
 <div class="main-text" >
@@ -92,12 +106,243 @@
 		· <span class="spacer"></span>Sie Ihre nach Art. 6 Abs. 1 S. 1 lit. a DSGVO ausdrückliche
 		Einwilligung dazu erteilt haben;<br>
 		· <span class="spacer"></span>die Weitergabe nach Art. 6 Abs. 1 S. 1 lit. f DSGVO zur
-		Geltendmachung, Ausübung oder Verteidigung von
-		Rechtsansprüchen erforderlich ist und kein Grund zur Annahme
-		besteht, dass Sie ein überwiegendes schutzwürdiges Interesse
-		an der Nichtweitergabe Ihrer Daten haben;<br>
-		· <span class="spacer"></span>für die Weitergabe nach Art. 6 Abs. 1 S. 1 lit. c DSGVO eine
-		(HIER IST DER TEXT IM PDF abgeschnitten)
+Geltendmachung, Ausübung oder Verteidigung von
+Rechtsansprüchen erforderlich ist und kein Grund zur Annahme
+besteht, dass Sie ein überwiegendes schutzwürdiges Interesse
+an der Nichtweitergabe Ihrer Daten haben;
+· <span class="spacer"></span>für die Weitergabe nach Art. 6 Abs. 1 S. 1 lit. c DSGVO eine
+rechtliche Verpflichtungbesteht; sowie
+· <span class="spacer"></span>dies gesetzlich zulässig und nach Art. 6 Abs. 1 S. 1 lit. b DSGVO
+für die Erfüllung eines Vertragsverhältnisses mit Ihnen
+erforderlich ist.<br><br>
+<span style="font-weight:800;font-family:Merriweather">Widerruf Ihrer Einwilligung zur Datenverarbeitung</span><br>
+Viele Datenverarbeitungsvorgänge sind nur mit Ihrer
+ausdrücklichen Einwilligung möglich. Sie können eine bereits
+erteilte Einwilligung jederzeit widerrufen (Art. 7 Abs. 3 DSGVO).<br>
+Dazu reicht eine formlose Mitteilung per E-Mail an
+rsjjb@t-online.de. Die Rechtmäßigkeit der bis zum Widerruf
+erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.<br><br>
+<span style="font-weight:800;font-family:Merriweather">Widerspruchsrecht gegen die Datenerhebung in besonderen
+Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)</span><br>
+Wenn die Datenverarbeitung auf Grundlage von Art. 6 Abs. 1 lit. e
+oder f DSGVO erfolgt, haben Sie jederzeit das Recht, aus Gründen,
+die sich aus Ihrer besonderen Situation ergeben, gegen die
+Verarbeitung Ihrer personenbezogenen Daten Widerspruch
+einzulegen; das gilt auch für ein auf diese Bestimmungen
+gestütztes Profiling. Die jeweilige Rechtsgrundlage, auf denen eine
+Verarbeitung beruht, entnehmen Sie bitte dieser
+Datenschutzerklärung. Wenn Sie Widerspruch einlegen, werden
+wir Ihre betroffenen personenbezogenen Daten nicht mehr
+verarbeiten, es sei denn, wir können zwingende schutzwürdige
+Gründe für die Verarbeitung nachweisen, die Ihre Interessen,
+Rechte und Freiheiten überwiegen, oder die Verarbeitung dient der
+Geltendmachung, Ausübung oder Verteidigung von
+Rechtsansprüchen (Widerspruch nach Art. 21 Abs. 1 DSGVO).<br>
+Werden Ihre personenbezogenen Daten verarbeitet, um
+Direktwerbung zu betreiben, haben Sie das Recht, jederzeit
+Widerspruch gegen die Verarbeitung Sie betreffender
+personenbezogener Daten zum Zwecke derartiger Werbung
+einzulegen; das gilt auch für das Profiling, soweit es mit solcher
+Direktwerbung in Verbindung steht. Wenn Sie widersprechen,
+werden Ihre personenbezogenen Daten anschließend nicht mehr
+zum Zweck der Direktwerbung verwendet (Widerspruch nach Art.<br>
+21 Abs. 2 DSGVO).<br><br>
+<span style="font-weight:800;font-family:Merriweather">Beschwerderecht bei einer Aufsichtsbehörde</span><br>
+Im Falle von Verstößen gegen die DSGVO steht den Betroffenen
+ein Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO),
+insbesondere in dem Mitgliedstaat ihres gewöhnlichen
+Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen
+Verstoßes zu. Das Beschwerderecht besteht unbeschadet
+anderweitiger verwaltungsrechtlicher oder gerichtlicher
+Rechtsbehelfe.
+<br><br>
+<span style="font-weight:800;font-family:Merriweather">
+Recht auf Datenübertragbarkeit</span><br>
+Sie haben das Recht, Daten, die wir auf Grundlage Ihrer
+Einwilligung oder in Erfüllung eines Vertrags automatisiert
+verarbeiten, an sich oder an einen Dritten in einem gängigen,
+maschinenlesbaren Format aushändigen zu lassen (Art. 20
+DSGVO). Sofern Sie die direkte Übertragung der Daten an einen
+anderen Verantwortlichen verlangen, erfolgt dies nur, wenn es
+technisch machbar ist.<br><br>
+<span style="font-weight:800;font-family:Merriweather">
+SSL- bzw. TLS-Verschlüsselung</span></br>
+Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der
+Übertragung vertraulicher Inhalte, wie zum Beispiel von
+Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber
+senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte
+Verbindung erkennen Sie daran, dass die Adresszeile des Browsers
+von „http://“ auf „https://“ wechselt sowie an dem
+Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw.
+TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an
+uns übermitteln, nicht von Dritten mitgelesen werden.<br><br>
+<span style="font-weight:800;font-family:Merriweather">
+Auskunft, Sperrung, Löschung und Berichtigung</span><br>
+Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen
+jederzeit das Recht auf unentgeltliche Auskunft über Ihre
+gespeicherten personenbezogenen Daten, deren Herkunft,
+Empfänger und den Zweck der Datenverarbeitung sowie ggf. ein
+Recht auf Berichtigung, Sperrung oder Löschung dieser Daten
+(Artt. 15–17 DSGVO). Hierzu und zu weiteren Fragen zum Thema
+Personenbezogene Daten können Sie sich jederzeit unter der
+angegebenen Adresse oder per E-Mail an uns wenden (s.
+Verantwortliche Stelle).<br><br>
+<span style="font-weight:800;font-family:Merriweather">
+Recht auf Einschränkung der Verarbeitung</span></br>
+Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer
+personenbezogenen Daten zu verlangen (Art. 18 DSGVO). Hierzu
+können Sie sich jederzeit unter der im Impressum angegebenen
+Adresse an uns wenden. Das Recht auf Einschränkung der
+Verarbeitung besteht in folgenden Fällen:<br><br>
+· <span class="spacer"></span>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten
+personenbezogenen Daten bestreiten, benötigen wir in der
+Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung
+haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer
+personenbezogenen Daten zu verlangen.<br>
+· <span class="spacer"></span>Wenn die Verarbeitung Ihrer personenbezogenen Daten
+unrechtmäßig geschah oder geschieht, können Sie statt der
+Löschung die Einschränkung der Datenverarbeitung verlangen.<br>
+· <span class="spacer"></span>Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen,
+Sie sie jedoch zur Ausübung, Verteidigung oder Geltendmachung
+von Rechtsansprüchen benötigen, haben Sie das Recht, statt der
+Löschung die Einschränkung der Verarbeitung Ihrer
+personenbezogenen Daten zu verlangen.<br>
+· <span class="spacer"></span>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO
+eingelegt haben, muss eine Abwägung zwischen Ihren und
+unseren Interessen vorgenommen werden. Solange noch nicht
+feststeht, wessen Interessen überwiegen, haben Sie das Recht,
+die Einschränkung der Verarbeitung Ihrer personenbezogenen
+Daten zu verlangen.<br><br>
+Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten
+eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung
+abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung,
+Ausübung oder Verteidigung von Rechtsansprüchen oder zum
+Schutz der Rechte einer anderen natürlichen oder juristischen
+Person oder aus Gründen eines wichtigen öffentlichen Interesses
+der Europäischen Union oder eines Mitgliedstaats verarbeitet
+werden.<br>
+Widerspruch gegen Werbe-E-Mails
+Der Nutzung von im Rahmen der Impressumspflicht
+veröffentlichten Kontaktdaten zur Übersendung von nicht
+ausdrücklich angeforderter Werbung und Informationsmaterialien
+wird hiermit widersprochen. Die Betreiber der Seiten behalten
+sich ausdrücklich rechtliche Schritte im Falle der unverlangten
+Zusendung von Werbeinformationen, etwa durch Spam-E-Mails,
+vor.<br><br>
+<h2 style="font-size:1.2rem">3. Datenerfassung auf unserer Website</h2>
+<span style="font-weight:800;font-family:Merriweather">Cookies</span><br>
+Cookies im Allgemeinen: Die Internetseiten verwenden teilweise
+sogenannte Cookies. Cookies sind kleine Textdateien, die auf
+Ihrem Rechner abgelegt werden und die Ihr Browser speichert. Sie
+richten auf Ihrem Rechner keinen Schaden an und enthalten keine
+Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher,
+effektiver und sicherer zu machen und, sofern sie auf Ihrem
+Endgerät gespeichert bleiben, bis Sie diese löschen, Ihren Browser
+beim nächsten Besuch wiederzuerkennen.<br>
+Session-Cookies: Wir verwenden sog. »Session-Cookies«, die
+nach Ende Ihres Besuchs automatisch gelöscht werden. Die
+Speicherung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
+aus dem berechtigten Interesse heraus, unser Webangebot
+funktionsfähig zu halten.<br>
+Ihr Umgang mit Cookies: Sie können Ihren Browser so einstellen,
+dass Sie über das Setzen von Cookies informiert werden und
+Cookies nur im Einzelfall erlauben, die Annahme von Cookies für
+bestimmte Fälle oder generell ausschließen und das automatische
+Löschen der Cookies beim Schließen des Browser aktivieren. Bei
+der Deaktivierung von Cookies kann die Funktionalität dieser
+Website eingeschränkt sein.<br><br>
+<span style="font-weight:800;font-family:Merriweather">Server-Log-Dateien</span></br>
+Der Provider der Seiten erhebt und speichert automatisch
+Informationen in sogenannten Server-Log-Dateien, die Ihr
+Browser automatisch an uns übermittelt. Dies sind:<br><br>
+· <span class="spacer"></span>Browsertyp und Browserversion<br>
+· <span class="spacer"></span>Verwendetes Betriebssystem<br>
+· <span class="spacer"></span>Referrer URL<br>
+· <span class="spacer"></span>Hostname des zugreifenden Rechners<br>
+· <span class="spacer"></span>Uhrzeit der Serveranfrage<br>
+· <span class="spacer"></span>IP-Adresse<br><br>
+Eine Zusammenführung dieser Daten mit anderen Datenquellen
+wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf
+Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Für den Webseitenbetrieb
+sowie die Erkennung und Abwehr von Angriffen ist das Erfassen
+und Vorhalten von Logfiles auf Ihrem Computer nötig. Diese
+werden standardmäßig nach 24 Stunden gelöscht.<br><br>
+<h2 style="font-size:1.2rem">Google Analytics</h2>
+<span style="font-weight:800;font-family:Merriweather">Art und Umfang der Verarbeitung</span></br>
+Wir verwenden Google Analytics von Google Ireland Limited,
+Gordon House, Barrow Street, Dublin 4, Irland, als Analysedienst
+zur statistischen Auswertung unseres Onlineangebotes. Diese
+umfasst beispielsweise die Anzahl der Aufrufe unseres
+Onlineangebotes, besuchte Unterseiten und die Verweildauer von
+Besuchern. Google Analytics nutzt Cookies und weitere
+Browser-Technologien, um Nutzerverhalten auszuwerten und
+Nutzer wiederzuerkennen. Diese Informationen werden unter
+anderem genutzt, um Berichte über die Aktivität der Website
+zusammenzustellen.<br><br>
+<span style="font-weight:800;font-family:Merriweather">Zweck und Rechtsgrundlage</span></br>
+Der Einsatz von Google Analytics erfolgt auf Grundlage Ihrer
+Einwilligung gemäß Art. 6 Abs. 1 lit. a. DSGVO und § 25 Abs. 1
+TDDDSG.<br><br>
+Bei der Verarbeitung werden auch personenbezogenen Daten an
+Drittländer außerhalb des Europäischen Wirtschaftsraums,
+insbesondere die USA, übermittelt. Zudem holen wir vor einem
+solchen Drittlandtransfer Ihre Einwilligung nach Art. 49 Abs. 1
+Satz 1 lit. a. DSGVO ein, die Sie über die Einwilligung im Consent
+Manager (oder sonstigen Formularen, Registrierungen etc.)
+erteilen. Wir weisen Sie darauf hin, dass bei
+Drittlandübermittlungen im Detail unbekannte Risiken (z.B. die
+Datenverarbeitung durch Sicherheitsbehörden des Drittlandes,
+deren genauer Umfang und deren Folgen für Sie wir nicht kennen,
+auf die wir keinen Einfluss haben und von denen Sie unter
+Umständen keine Kenntnis erlangen) bestehen können.<br><br>
+<span style="font-weight:800;font-family:Merriweather">Speicherdauer</span></br>
+Die konkrete Speicherdauer der verarbeiteten Daten ist nicht
+durch uns beeinflussbar, sondern wird von Google Ireland Limited
+bestimmt. Weitere Hinweise finden Sie in der
+Datenschutzerklärung für Google Analytics:<br>
+<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a><br><br>
+<h2 style="font-size:1.2rem">Google Web Fonts</h2>
+<span style="font-weight:800;font-family:Merriweather">Art und Umfang der Verarbeitung</span></br>
+Wir verwenden Google Fonts von Google Ireland Limited, Gordon
+House, Barrow Street, Dublin 4, Irland, als Dienst zur
+Bereitstellung von Schriftarten für unser Onlineangebot. Um diese
+Schriftarten zu beziehen, stellen Sie eine Verbindung zu Servern
+von Google Ireland Limited her, wobei Ihre IP-Adresse übertragen
+wird.<br>
+Zweck und Rechtsgrundlage
+Der Einsatz von Google Fonts erfolgt auf Grundlage Ihrer
+Einwilligung gemäß Art. 6 Abs. 1 lit. a. DSGVO und § 25 Abs. 1
+TDDDSG.<br><br>
+Durch die Nutzung unserer Webseite werden personenbezogenen
+Daten auch an Drittländer außerhalb des Europäischen
+Wirtschaftsraums, insbesondere die USA, übermittelt. Es bsteht
+der Angemessenheitsbeschluss derEuropäischenKommisson, der
+DPF, unter welchem auch Google LLC zertifizert ist. In Fällen, in
+denen kein Angemessenheitsbeschluss der Europäischen
+Kommission existiert, haben wir mit den Empfängern der Daten
+anderweitige geeignete Garantien im Sinne der Art. 44 ff. DSGVO
+vereinbart. Dies sind – sofern nicht anders angegeben –
+Standardvertragsklauseln der EU-Kommission gemäß
+Durchführungsbeschluss (EU) 2021/914 vom 4. Juni 2021. Eine
+Kopie dieser Standardvertragsklauseln können Sie unter
+<a href="https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32021D0914&from=DE">https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/</a>
+einsehen.<br><br>
+Zudem holen wir vor einem solchen Drittlandtransfer Ihre
+Einwilligung nach Art. 49 Abs. 1 Satz 1 lit. a. DSGVO ein, die Sie
+über die Einwilligung im Consent Manager (oder sonstigen
+Formularen, Registrierungen etc.) erteilen. Wir weisen Sie darauf
+hin, dass bei Drittlandübermittlungen im Detail unbekannte
+Risiken (z. B. die Datenverarbeitung durch Sicherheitsbehörden
+des Drittlandes, deren genauer Umfang und deren Folgen für Sie
+wir nicht kennen, auf die wir keinen Einfluss haben und von
+denen Sie unter Umständen keine Kenntnis erlangen) bestehen
+können.<br><br>
+<span style="font-weight:800;font-family:Merriweather">Speicherdauer</span><br>
+Die konkrete Speicherdauer der verarbeiteten Daten ist nicht
+durch uns beeinflussbar, sondern wird von Google Ireland Limited
+bestimmt. Weitere Hinweise finden Sie in der
+Datenschutzerklärung für Google Fonts:
+<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a><br><br>
 </div></div>
 
 </body>
@@ -109,7 +354,7 @@
 </script>
 <footer><div class="footercolumn">Susanne Schneppe-Behrens<br>
 Am Mühlenteich 15<br>
-24582 Bordesholm<br></div><div class="footercolumn">Telefon 04322 692611<br>
+24582 Bordesholm<br></div><div class="footercolumn">Telefon 04322 692689<br>
   E-Mail: rsjjb@t-online.de</div><div class="footercolumn"><a href="impressum.html">Impressum</a><br><a style="color:#003D8E!important"href="datenschutz.html">Datenschutz</a></div>
 </footer>
 </html>

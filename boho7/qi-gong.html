@@ -29,8 +29,22 @@
     <a href="about.html" class="menu-item">Über mich</a>
   </div></div>
 </header>
-<iframe src="cookies.html" width="350" height="250" style="z-index: 9999;border:none; position: fixed; bottom: 20px; left: 50%;transform:translateX(-50%); "></iframe>
+<iframe id="cookieFrame"src="cookies.html" width="350" height="450" style="z-index: 9999;border:none; position: fixed; bottom: 20px; left: 50%;transform:translateX(-50%); "></iframe>
+<script>
+window.addEventListener("message", function(event) {
+    if (event.data === "hideCookieFrame") {
+        document.getElementById("cookieFrame").style.display = "none";
+    }
+});
+    function resizeIframe() {
+        let iframe = document.getElementById("cookieFrame");
+        iframe.style.width = window.innerWidth + "px";
+        iframe.style.height = window.innerHeight + "px";
+    }
 
+    window.addEventListener("resize", resizeIframe);
+    resizeIframe(); // Call on page load
+</script>
 <body>
 
   <main>
@@ -68,7 +82,7 @@ Entspannt bringen wir unsere Lebensenergie ins Fließen. Achtsam, präsent und f
 </script>
 <footer><div class="footercolumn">Susanne Schneppe-Behrens<br>
 Am Mühlenteich 15<br>
-24582 Bordesholm<br></div><div class="footercolumn">Telefon 04322 692611<br>
+24582 Bordesholm<br></div><div class="footercolumn">Telefon 04322 692689<br>
   E-Mail: rsjjb@t-online.de</div><div class="footercolumn"><a style=""href="impressum.html">Impressum</a><br><a href="datenschutz.html">Datenschutz</a></div>
 </footer>
 </html>

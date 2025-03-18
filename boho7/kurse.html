@@ -27,8 +27,22 @@
     <a href="about.html" class="menu-item">Über mich</a>
   </div></div>
 </header>
-<iframe src="cookies.html" width="350" height="250" style="z-index: 9999;border:none; position: fixed; bottom: 20px; left: 50%;transform:translateX(-50%); "></iframe>
+<iframe id="cookieFrame"src="cookies.html" width="350" height="450" style="z-index: 9999;border:none; position: fixed; bottom: 20px; left: 50%;transform:translateX(-50%); "></iframe>
+<script>
+window.addEventListener("message", function(event) {
+    if (event.data === "hideCookieFrame") {
+        document.getElementById("cookieFrame").style.display = "none";
+    }
+});
+    function resizeIframe() {
+        let iframe = document.getElementById("cookieFrame");
+        iframe.style.width = window.innerWidth + "px";
+        iframe.style.height = window.innerHeight + "px";
+    }
 
+    window.addEventListener("resize", resizeIframe);
+    resizeIframe(); // Call on page load
+</script>
 <body>
 
   <main>
@@ -67,17 +81,17 @@ Unternehmen und Einrichtungen, die die Gesundheit Ihrer Mitarbeiter:innen im Rah
 <h6>Schupperstunde</h6>
 120 Minuten 50,– (Sonderpreis)<br><br>
 <h6>Einzelstunden</h6>
-60 Minuten 60,–<br>
-90 Minuten 80,–<br>
+60 Minuten 50,–<br>
+90 Minuten 75,–<br>
 <br>
 <h6>Gruppenstunden</h6>
 90 Minuten<br>
 2 Teilnehmer:innen 40,– pro Person<br>
-3 Teilnehmer:innen 26,– pro Person<br>
-4 Teilnehmer:innen 20,– pro Person<br>
+3 Teilnehmer:innen 28,– pro Person<br>
+4 Teilnehmer:innen 22,– pro Person<br>
 <br>
 <h6>In-House-Veranstaltungen</h6>
-60 Minuten 90,–<br>
+60 Minuten 80,–<br>
 90 Minuten 130,–<br>
 zzgl. 0,50 EUR pro Kilometer An- und Abfahrt<br>
 
@@ -95,7 +109,7 @@ zzgl. 0,50 EUR pro Kilometer An- und Abfahrt<br>
 </script>
 <footer><div class="footercolumn">Susanne Schneppe-Behrens<br>
 Am Mühlenteich 15<br>
-24582 Bordesholm<br></div><div class="footercolumn">Telefon 04322 692611<br>
+24582 Bordesholm<br></div><div class="footercolumn">Telefon 04322 692689<br>
   E-Mail: rsjjb@t-online.de</div><div class="footercolumn"><a style=""href="impressum.html">Impressum</a><br><a href="datenschutz.html">Datenschutz</a></div>
 </footer>
 </html>
